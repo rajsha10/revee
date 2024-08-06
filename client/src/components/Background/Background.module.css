@@ -1,0 +1,116 @@
+/* Base styles for desktop */
+.container {
+  display: flex;
+  height: 100vh;
+  padding: 4rem; /* Adequate padding for desktop */
+  flex-direction: row; /* Layout is row-based for desktop */
+}
+
+.leftSide {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  color: white;
+  padding: 4rem;
+}
+
+.heading {
+  font-size: 7.5rem; /* Large font size for desktop */
+  font-weight: 500;
+  border-right: 2px solid #ccc; /* Visual caret */
+  white-space: nowrap; /* Prevent the text from wrapping */
+  overflow: hidden; /* Hide the overflow text */
+  width: 0; /* Initially set the width to 0 for the typing effect */
+  transition: 1s all ease;
+  margin-right: auto;
+  animation: typing 1s steps(5, end) forwards,
+    blink-caret 0.55s step-end infinite;
+}
+
+.textSection {
+  font-size: 1.8rem; /* Large font size for desktop */
+  font-weight: 100;
+  gap: 0;
+}
+
+.text {
+  font-weight: 200;
+  font-size: 2rem;
+}
+
+.rightSide {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+}
+
+/* Keyframes for typing animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 5.5ch;
+  }
+}
+
+/* Keyframes for blinking caret */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #ccc;
+  }
+}
+
+/* Additional media queries and styles for responsiveness */
+@media (max-width: 1024px) {
+  .leftSide,
+  .rightSide {
+    padding: 2rem;
+  }
+
+  .heading {
+    font-size: 4rem;
+  }
+
+  .text {
+    font-size: 1.5rem;
+  }
+
+  .subText {
+    font-size: 1rem;
+  }
+
+  .formTitle {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .container{
+    flex-direction: column;
+  }
+  .heading {
+    font-size: 3.5rem;
+  }
+
+  .text {
+    font-size: 1.25rem;
+  }
+
+  .subText {
+    font-size: 0.875rem;
+  }
+
+  .formTitle {
+    font-size: 1.75rem;
+  }
+}
