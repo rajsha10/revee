@@ -1,0 +1,131 @@
+/* ConnectWalletForm.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 375px; /* Adjust max-width as needed */
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+  height: 570px;
+  border: 2px solid #4c4c4c;
+  border-radius: 8px;
+  background: linear-gradient(120deg, #000, #000000, #262626, #000);
+  background-size: 300% auto;
+  animation: shinyEffect 60s linear infinite;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.welcomeMessage {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.welcomeMessage span {
+  font-size: 4rem;
+}
+
+.logoContainer {
+  margin-bottom: 2rem;
+}
+
+.logo {
+  width: 100%; /* Adjust size responsively */
+  max-width: 250px; /* Limit size */
+  height: auto;
+}
+
+.connectButton {
+  padding: 1rem 2rem;
+  background-image: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: 500;
+  transition: 0.3s all ease-in-out;
+  margin: 0.5rem;
+}
+
+.connectButton:hover {
+  background-image: linear-gradient(to right, #6400df, #1d64d9);
+}
+
+/* Shiny effect keyframes */
+@keyframes shinyEffect {
+  0% {
+    background-position: -150%;
+  }
+  50% {
+    background-position: 150%;
+  }
+  100% {
+    background-position: 250%;
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .welcomeMessage {
+    font-size: 2rem;
+  }
+
+  .welcomeMessage span {
+    font-size: 3.5rem;
+  }
+
+  .connectButton {
+    font-size: 1.4rem;
+    padding: 0.8rem 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 4.5rem 2rem;
+    height: 500px; /* Adjust height for smaller screens */
+    
+    justify-content: space-between;
+  }
+
+  .welcomeMessage {
+    font-size: 1.8rem;
+  }
+
+  .welcomeMessage span {
+    font-size: 3rem;
+  }
+
+  .logo {
+    max-width: 250px; /* Adjust size for smaller screens */
+  }
+
+  .connectButton {
+    font-size: 1.2rem;
+    padding: 1.3rem 2.2rem;
+    margin: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container{
+    width: 400px;
+  }
+  .welcomeMessage {
+    font-size: 1.6rem;
+  }
+
+  .welcomeMessage span {
+    font-size: 2.5rem;
+  }
+
+  .logo {
+    max-width: 200px; /* Adjust size for mobile screens */
+  }
+
+  
+}

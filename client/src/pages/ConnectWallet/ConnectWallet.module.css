@@ -1,0 +1,14 @@
+.connectButton {
+  padding: 1rem 2rem;
+  background-image: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.connectButton:hover {
+  background-image: linear-gradient(to right, #5a0eb8, #1d64d9);
+}

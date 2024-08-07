@@ -1,0 +1,206 @@
+/* Signup.module.css */
+
+.signupForm {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  max-width: 375px; /* Wider form for desktop */
+  border: 2px solid #4c4c4c;
+  padding: 2rem 4rem;
+  color: #fff;
+  border-radius: 8px;
+  background: linear-gradient(120deg, #000, #000000, #262626, #000);
+  background-size: 100% auto;
+  animation: shinyEffect 25s linear infinite;
+  height: 596px;
+}
+
+.signupForm h2 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.signupForm .formText {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 5rem;
+}
+
+.signupForm .formSubText {
+  font-size: 1.2rem;
+  margin-top: 0;
+}
+
+.signupForm input {
+  padding: 1.3rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1.3rem; /* Readable font size for desktop */
+  color: #cccccc;
+  background: #000;
+}
+
+.signupForm button {
+margin: 1rem 0;
+  padding: 1rem 2rem;
+  background-image: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1.6rem; /* Readable font size for desktop */
+  font-weight: 500;
+  transition: 0.3s all ease-in-out;
+}
+
+.signupForm button:hover {
+  background-image: linear-gradient(to right, #6400df, #1d64d9);
+}
+
+.signupForm .forgotPassword {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #007bff;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 500;
+}
+
+.signupForm .orSeparator {
+  display: flex;
+  font-size: 1.5rem;
+  align-items: center;
+  margin: 1rem 0;
+  color: #646464;
+}
+
+.signupForm .orSeparator::before,
+.signupForm .orSeparator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #302f2f;
+}
+
+.signupForm .orSeparator:not(:empty)::before {
+  margin-right: 0.5em;
+}
+
+.signupForm .orSeparator:not(:empty)::after {
+  margin-left: 0.5em;
+}
+
+.signupForm .socialLogin {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.signupForm .socialButton {
+  flex: 1;
+  padding: 0.75rem;
+  margin: 0 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem; /* Readable font size for desktop */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signupForm .footer {
+  text-align: center;
+}
+
+.signupForm .footerText {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+}
+
+.signupForm .footerText:hover {
+  color: #c7c7c7;
+}
+
+.signupForm .footerLinks {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.3rem;
+  color: #ccc;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+.signupForm .footerLinks span {
+  margin: 0 1rem;
+}
+
+/* Shiny effect keyframes */
+@keyframes shinyEffect {
+  0% {
+    background-position: -150%;
+  }
+  50% {
+    background-position: 150%;
+  }
+  100% {
+    background-position: -150%;
+  }
+}
+
+/* Media queries for responsive adjustments */
+@media (max-width: 1024px) {
+  .signupForm {
+    padding: 2rem; /* Adjust padding for smaller screens */
+  }
+
+  .signupForm input {
+    font-size: 1rem; /* Adjusted font size for smaller screens */
+  }
+
+  .signupForm button {
+    font-size: 1.4rem; /* Adjusted font size for smaller screens */
+  }
+
+  .signupForm .orSeparator {
+    font-size: 1.5rem; /* Adjusted font size for smaller screens */
+  }
+
+  .signupForm .footerLinks {
+    font-size: 1rem; /* Adjusted font size for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .signupForm h2 {
+    font-size: 2.5rem; /* Adjusted font size for smaller screens */
+  }
+
+  .signupForm {
+    padding: 1.5rem; /* Adjust padding for smaller screens */
+  }
+
+  .signupForm input {
+    font-size: 1rem; /* Adjusted font size for smaller screens */
+  }
+
+  .signupForm button {
+    font-size: 1.2rem; /* Adjusted font size for smaller screens */
+  }
+
+  .signupForm .orSeparator {
+    font-size: 1rem; /* Adjusted font size for smaller screens */
+  }
+
+  .signupForm .footerLinks {
+    font-size: 1.2rem; /* Adjusted font size for smaller screens */
+  }
+}

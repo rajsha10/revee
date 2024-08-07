@@ -1,0 +1,52 @@
+.productItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 200px;
+  border: 1px solid #333; /* Darker border color */
+  border-radius: 15px;
+  padding: 1rem;
+  background-color: #1f1f1f; /* Darker background for product item */
+  color: #fff; /* White text color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
+  height: 300px;
+  gap: 1rem; /* Adjusted gap */
+  transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.productItem:hover {
+  border: 1px solid #2575fc; /* Glowing blue border */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 0 0 10px #2575fc; /* Enhanced shadow and blue glow */
+}
+
+.productImage {
+  width: 200px;
+  padding: 0;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+ 
+}
+
+.productInfo {
+  text-align: center;
+}
+
+.productName {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #fff; /* White text color */
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.44s all ease-in-out;
+}
+
+.productName:hover{
+  text-decoration: underline;
+}
+
+.productStars {
+  font-size: 1.4rem;
+  color: #f5c518; /* Star color */
+}
