@@ -16,10 +16,19 @@ Revee leverages blockchain technology to guarantee the integrity and authenticit
 - **Transparency and Immutability:** All transactions and reviews are recorded on the blockchain.
 - **Enhanced User Experience:** Background music for platform logins and successful transactions.
 
+## Diamante Integration
+
+- **Anonymous Reviews Storage:** Diamante blockchain ensures that all reviews are stored anonymously, preserving user privacy.
+- **Transaction Control:** Diamante's consensus protocol manages and verifies token transactions, preventing spamming and maintaining data integrity.
+
+## Anon Aadhar Verification
+
+- **User Verification:** Anon Aadhar ensures each user completes KYC verification without compromising their anonymity.
+- **Unique Review Submission:** Each user can submit only one review per product, enforced by the Anon Aadhar system to prevent spam and duplicate entries.
+
 ## Get Started
 
 1. **Clone the Repository**
    ```bash
    git clone https://github.com/your-username/revee.git
    cd revee
-
