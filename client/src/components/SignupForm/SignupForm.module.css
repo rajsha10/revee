@@ -13,7 +13,7 @@
   background: linear-gradient(120deg, #000, #000000, #262626, #000);
   background-size: 100% auto;
   animation: shinyEffect 25s linear infinite;
-  height: 596px;
+  height: 605px;
 }
 
 .signupForm h2 {

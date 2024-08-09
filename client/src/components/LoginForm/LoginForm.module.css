@@ -9,10 +9,10 @@
   color: #fff;
   border-radius: 8px;
 
-  background: linear-gradient(120deg, #000, #000000, #262626, #000);
+  background: linear-gradient(120deg, #000, #010010, #262626, #000);
   background-size: 100% auto;
   animation: shinyEffect 25s linear infinite;
-  height: 596px;
+  height: 605px;
 }
 
 .formTitle {
@@ -150,6 +150,13 @@
 
 .footerLinks span {
   margin: 0 0.5rem;
+}
+
+.error{
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  columns: red;
 }
 
 /* Shiny effect keyframes */

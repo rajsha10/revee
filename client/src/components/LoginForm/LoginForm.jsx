@@ -1,37 +1,73 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { setUser } from "../../features/auth/authSlice";
-import { auth, signInWithEmailAndPassword } from "../../firebaseConfig"; // Adjust the import path
+import { auth, signInWithEmailAndPassword, db } from "../../firebaseConfig"; // Adjust the import path
+import { doc, getDoc } from "firebase/firestore";
 import styles from "./LoginForm.module.css";
+import { LogInWithAnonAadhaar, useAnonAadhaar } from "@anon-aadhaar/react";
 
 const LoginForm = () => {
-  const [username, setUsername] = useState("");
+  const [anonAadhaar] = useAnonAadhaar();
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(""); // Add state for error handling
+  const [error, setError] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (anonAadhaar.status === 'authenticated') {
+      handleAnonAadhaarLogin(anonAadhaar.data);
+    }
+  }, [anonAadhaar]);
+
+  const handleAnonAadhaarLogin = async (data) => {
+    try {
+      const userDoc = await getDoc(doc(db, "users", data.nullifierHash));
+      if (userDoc.exists()) {
+        const userData = userDoc.data();
+        dispatch(setUser({
+          uid: data.nullifierHash,
+          username: userData.username,
+          email: userData.email,
+          name: userData.name,
+        }));
+        console.log("Anon Aadhaar user set:", {
+          uid: data.nullifierHash,
+          username: userData.username,
+          email: userData.email,
+          name: userData.name,
+        });
+        navigate("/connect-wallet");
+      } else {
+        setError("User not found.");
+      }
+    } catch (error) {
+      setError("Login error: " + error.message);
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, username, password);
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
-      
-      // Update user state with Redux
-      dispatch(setUser({
-        uid: user.uid,
-        username: user.displayName || username,
-        email: user.email,
-        name: user.displayName || 'User Name',
-      }));
-      
-      // Redirect to home page after successful login
-      navigate("/connect-wallet");
+      const userDoc = await getDoc(doc(db, "users", user.uid));
+      if (userDoc.exists()) {
+        const userData = userDoc.data();
+        dispatch(setUser({
+          uid: user.uid,
+          username: userData.username,
+          email: user.email,
+          name: userData.name,
+        }));
+        navigate("/connect-wallet");
+        console.log(user)
+      } else {
+        setError("User not found.");
+      }
     } catch (error) {
-      // Handle login errors
       setError("Invalid credentials. Please try again.");
-      console.error("Login error:", error.message);
     }
   };
 
@@ -44,9 +80,9 @@ const LoginForm = () => {
 
       <input
         type="text"
-        placeholder="Username (Email)"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
         className={styles.input}
       />
       <input
@@ -60,7 +96,7 @@ const LoginForm = () => {
         <input type="checkbox" id="rememberMe" />
         <label htmlFor="rememberMe">Remember Me</label>
       </div>
-      {error && <p className={styles.error}>{error}</p>} {/* Display error if any */}
+      {error && <p className={styles.error}>{error}</p>}
       <button type="submit" className={styles.button}>
         Login
       </button>
@@ -88,6 +124,8 @@ const LoginForm = () => {
           <span>Customer Care</span>
         </div>
       </div>
+      <LogInWithAnonAadhaar nullifierSeed={1234} />
+      <p>{anonAadhaar?.status}</p>
     </form>
   );
 };

@@ -9,7 +9,7 @@ const Background = () => {
         <h1 className={styles.heading}>Revee.</h1>
         <div className={styles.textSection}>
           <p className={styles.text}>Review, Earn, Repeat:</p>
-          <p className={styles.text}>Get Bitcoin for Your Feedback!</p>
+          <p className={styles.text}>Get Rewards for Your Feedback!</p>
         </div>
       </div>
       <div className={styles.rightSide}>
