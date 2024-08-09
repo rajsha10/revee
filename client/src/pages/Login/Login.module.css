@@ -1,0 +1,101 @@
+
+.rightSide {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+}
+
+
+
+
+
+
+/* Media queries for responsive adjustments */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column; /* Stack the sides on smaller screens */
+    padding: 2rem;
+  }
+
+  .leftSide,
+  .rightSide {
+    padding: 2rem; /* Reduced padding for smaller screens */
+  }
+
+  .heading {
+    font-size: 4.5rem; /* Adjusted font size for smaller screens */
+  }
+
+  .textSection {
+    font-size: 1.5rem; /* Adjusted font size for smaller screens */
+  }
+
+  .text {
+    font-size: 1.5rem; /* Adjusted font size for smaller screens */
+  }
+
+  .formTitle {
+    font-size: 3rem; /* Adjusted font size for smaller screens */
+  }
+
+  .form {
+    padding: 2rem; /* Adjust padding for smaller screens */
+  }
+
+  .input {
+    font-size: 1rem; /* Adjusted font size for smaller screens */
+  }
+
+  .button {
+    font-size: 1.4rem; /* Adjusted font size for smaller screens */
+  }
+
+  .orSeparator {
+    font-size: 1.5rem; /* Adjusted font size for smaller screens */
+  }
+
+  .footerLinks {
+    font-size: 1rem; /* Adjusted font size for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 3rem; /* Smaller font size for mobile screens */
+  }
+
+  .textSection {
+    font-size: 1.25rem; /* Smaller font size for mobile screens */
+  }
+
+  .text {
+    font-size: 1.25rem; /* Smaller font size for mobile screens */
+  }
+
+  .formTitle {
+    font-size: 2.5rem; /* Adjusted font size for smaller screens */
+  }
+
+  .form {
+    padding: 1.5rem; /* Adjust padding for smaller screens */
+  }
+
+  .input {
+    font-size: 1rem; /* Adjusted font size for smaller screens */
+  }
+
+  .button {
+    font-size: 1.2rem; /* Adjusted font size for smaller screens */
+  }
+
+  .orSeparator {
+    font-size: 1rem; /* Adjusted font size for smaller screens */
+  }
+
+  .footerLinks {
+    font-size: 1.2rem; /* Adjusted font size for smaller screens */
+  }
+}
