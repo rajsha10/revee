@@ -1,5 +1,7 @@
 REMIX DEFAULT WORKSPACE
 
+https://www.youtube.com/watch?v=7y1sDo7DEU0
+
 Remix default workspace is present when:
 i. Remix loads for the very first time 
 ii. A new workspace is created with 'Default' template
